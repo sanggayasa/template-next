@@ -3,7 +3,7 @@ import Datepicker from 'react-tailwindcss-datepicker'
 export default function SelectDate ({ 
   labelName, 
   messageError, 
-  // value, 
+  value, 
   setValue, 
   disabled, 
   isLoading, 
@@ -11,10 +11,10 @@ export default function SelectDate ({
 } : Readonly<{
   labelName: any,
   messageError: string,
-  // value: {
-  //   startDate: string,
-  //   endDate: string
-  // },
+  value: {
+    startDate: string,
+    endDate: string
+  },
   setValue?: Function,
   disabled: boolean,
   isLoading: boolean,
@@ -22,20 +22,23 @@ export default function SelectDate ({
 }>){
   const currentDate = new Date()
 
-  const [value, setChildValue] = useState<{ startDate: string; endDate: string }>({
-    startDate: "",
-    endDate: ""
-  });; 
+  type DateType = string | null | Date;
+  type DateRangeType = {
+      startDate: DateType;
+      endDate: DateType;
+  };
+  type DateValueType = DateRangeType | null;
 
-  const handleValueChange = (newValue: { startDate: Date | null; endDate: Date | null; }) => {
-    console.log(newValue)
-    const value = {
-      startDate: newValue.startDate ? newValue.startDate.toString() : "", 
-      endDate: newValue.endDate ? newValue.endDate.toString() : ""
-    };
-
-    setChildValue(value);
-    setValue?.(newValue); 
+  const handleValueChange = ({date}:{date: DateValueType })=> {
+    
+    if (date !== null) {
+      const value = {
+        startDate: date.startDate instanceof Date ? date.startDate.toISOString() : date.startDate?.toString() || "",
+        endDate: date.endDate instanceof Date ? date.endDate.toISOString() : date.endDate?.toString() || ""
+      };
+      
+      setValue?.(value); 
+    }
   } 
 
   currentDate.setDate(currentDate.getDate() + 1)
@@ -58,7 +61,7 @@ export default function SelectDate ({
                             placeholder={'Select date start to Select date end'}
                             useRange={false}
                             value={value}
-                            onChange={(v) => handleValueChange(v)}
+                            onChange={(date) => handleValueChange({ date })}
                             showFooter={true}
                             disabled={disabled}
                             inputClassName={"ring ring-1 ring-gray-300 relative transition-all duration-300 py-2.5 pl-4 pr-14 w-full border-gray-300 dark:bg-slate-800 dark:text-white/80 dark:border-slate-600 rounded-lg tracking-wide font-light text-sm placeholder-gray-400 bg-white focus:ring disabled:opacity-40 disabled:cursor-not-allowed focus:border-blue-500 focus:ring-blue-500/20"}

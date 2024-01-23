@@ -16,7 +16,7 @@ const InputNumber = ({
 }:{
   className: string, 
   labelName: string, 
-  value: number, 
+  value: string, 
   disabled: boolean, 
   prefix: string, 
   suffix: string, 
@@ -45,7 +45,7 @@ const InputNumber = ({
           decimalSeparator="."
           id={id}
           className={`${messageError ? 'focus:border-red-300 focus:ring-red-300 border-red-300' : 'focus:border-blue-300 border-gray-300'} focus:shadow-primary-outline dark:bg-slate-850 dark:text-white text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid bg-white bg-clip-padding px-3 py-2.5 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:outline-none disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none `}
-          onValueChange={values => setValue(values)}
+          onValueChange={values => setValue(values.value)}
           />
         }
           {

@@ -1,8 +1,25 @@
 import { MultiSelect } from 'react-multi-select-component'
 import React, { useEffect } from 'react'
-import PropTypes from 'prop-types'
 
-const MultipleSelect = ({ labelName, options, selected, setSelected, disabled, messageError, isLoading, id }) => {
+const MultipleSelect = ({ 
+  labelName, 
+  options, 
+  selected, 
+  setSelected, 
+  disabled, 
+  messageError, 
+  isLoading, 
+  id 
+}:{
+  labelName: string,
+  options: any[],
+  selected: any[],
+  setSelected: Function,
+  disabled: boolean,
+  messageError: string,
+  isLoading: boolean,
+  id: string
+}) => {
   useEffect(() => {
     if (disabled) {
       const elements = document.querySelectorAll('.dropdown-heading')
@@ -17,7 +34,16 @@ const MultipleSelect = ({ labelName, options, selected, setSelected, disabled, m
     }
   }, [isLoading, disabled])
 
+  useEffect(()=>{
+    // const multipleSelect = document.getElementsByClassName('multiple-select')
+    // multipleSelect[0].classList.add('border-none')
+    // multipleSelect[0].children[0].classList.add('border-none')
+    // console.log(multipleSelect[0].children[0])
+    // multipleSelect[0].children[0]
+  },[])
+
   return (
+        
         <div>
             <label className="inline-block mb-2 ml-1 font-bold text-xs text-slate-700 dark:text-white/80">{labelName || 'labelName'}</label>
             {
@@ -33,7 +59,7 @@ const MultipleSelect = ({ labelName, options, selected, setSelected, disabled, m
                   onChange={setSelected}
                   labelledBy="Select"
                   disabled={disabled}
-                  className={messageError ? ' rounded-md border border-red-300 ' : 'border-none outline-none'}
+                  className={messageError ? ' rounded-md border border-red-300 multiple-select' : 'multiple-select ring-offset-2 ring rounded-md border-solid border border-4 border-yellow-500 outline outline-red-500 leading-none divide-x-0'}
               />
             }
             {
@@ -45,17 +71,6 @@ const MultipleSelect = ({ labelName, options, selected, setSelected, disabled, m
             }
         </div>
   )
-}
-
-MultipleSelect.propTypes = {
-  labelName: PropTypes.string,
-  options: PropTypes.array,
-  selected: PropTypes.array,
-  setSelected: PropTypes.func,
-  disabled: PropTypes.bool,
-  messageError: PropTypes.string,
-  isLoading: PropTypes.bool,
-  id: PropTypes.string
 }
 
 export default MultipleSelect
