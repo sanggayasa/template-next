@@ -59,7 +59,7 @@ const MultipleSelect = ({
                   onChange={setSelected}
                   labelledBy="Select"
                   disabled={disabled}
-                  className={messageError ? ' rounded-md border border-red-300 multiple-select' : 'multiple-select ring-offset-2 ring rounded-md border-solid border border-4 border-yellow-500 outline outline-red-500 leading-none divide-x-0'}
+                  className={messageError ? ' rounded-md border border-red-300 multiple-select' : 'multiple-select ring-1 rounded-md border-solid border leading-none divide-x-0'}
               />
             }
             {
