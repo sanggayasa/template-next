@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import Datepicker from 'react-tailwindcss-datepicker'
 export default function SelectDate ({ 
   labelName, 

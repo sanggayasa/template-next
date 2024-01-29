@@ -35,11 +35,8 @@ const MultipleSelect = ({
   }, [isLoading, disabled])
 
   useEffect(()=>{
-    // const multipleSelect = document.getElementsByClassName('multiple-select')
-    // multipleSelect[0].classList.add('border-none')
-    // multipleSelect[0].children[0].classList.add('border-none')
-    // console.log(multipleSelect[0].children[0])
-    // multipleSelect[0].children[0]
+    const multipleSelect = document.getElementsByClassName('multiple-select')
+    multipleSelect[0].children[0].className = 'dropdown-container-multiselect'
   },[])
 
   return (
@@ -59,7 +56,7 @@ const MultipleSelect = ({
                   onChange={setSelected}
                   labelledBy="Select"
                   disabled={disabled}
-                  className={messageError ? ' rounded-md border border-red-300 multiple-select' : 'multiple-select ring-1 rounded-md border-solid border leading-none divide-x-0'}
+                  className={messageError ? ' rounded-md border border-red-300 multiple-select' : 'multiple-select'}
               />
             }
             {

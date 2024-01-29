@@ -1,7 +1,20 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-
-const TextArea = ({ labelName, value, setValue, disabled, messageError, isLoading, id }) => {
+const TextArea = ({ 
+  labelName, 
+  value, 
+  setValue, 
+  disabled, 
+  messageError, 
+  isLoading, 
+  id 
+}:{
+  labelName?: any;
+  value?: string;
+  setValue?: any;
+  disabled?: boolean;
+  messageError?: string;
+  isLoading?: boolean;
+  id?: string;
+}) => {
   return (
         <div>
             <div className="">
@@ -31,13 +44,4 @@ const TextArea = ({ labelName, value, setValue, disabled, messageError, isLoadin
   )
 }
 
-TextArea.propTypes = {
-  labelName: PropTypes.any,
-  value: PropTypes.string,
-  setValue: PropTypes.func,
-  disabled: PropTypes.bool,
-  messageError: PropTypes.string,
-  isLoading: PropTypes.bool,
-  id: PropTypes.string
-}
 export default TextArea

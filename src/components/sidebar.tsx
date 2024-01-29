@@ -5,7 +5,7 @@ import MenuSidebar from '@/components/menuSidebar'
 export default function Sidebar({sidebarOpen, setSidebarOpen}:Readonly<{sidebarOpen: ReactNode, setSidebarOpen: Function}>) {
     
     return (
-            <aside id="default-sidebar" className={`md:sticky fixed top-0 left-0 w-64 h-screen transition-transform ${sidebarOpen ? 'translate-x-0':'-translate-x-full'} md:translate-x-0`} aria-label="Sidebar">
+            <aside id="default-sidebar" className={`md:sticky fixed top-0 left-0 w-64 h-screen transition-transform ${sidebarOpen ? 'translate-x-0':'-translate-x-full'} md:translate-x-0 z-10`} aria-label="Sidebar">
                 <div className="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
                     <div className="flex flex-row m-2 mb-12">
                         <div>

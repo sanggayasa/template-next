@@ -1,0 +1,85 @@
+
+.aboutus{
+    font-weight: 700;
+    font-size: 54px;
+    text-transform: capitalize;
+    line-height: 0.91;
+    color: #0E185F;
+    margin:44px;
+}
+.about-para{
+    line-height: 25px;
+    text-align: justify;
+    font-size: 18px;
+    padding: 0px 10px 0px 10px;
+    width: 600px;
+    margin: 5px 20px 0px 40px;
+}
+.body-company{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f2f2f2;
+}
+.body-company-column{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #f2f2f2;
+}
+.company .card-comp .comp-img{
+    height: 140px;
+    width: 140px;
+    border-radius: 50%;
+    padding: 3px;
+    background: -webkit-linear-gradient(bottom, #00FFDD, #2FA4FF);
+}
+.company .card-comp .comp-img img{ 
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #fff;
+}
+.comp-img img:hover{
+    cursor: pointer;
+    size-adjust: 100%;
+}
+.card-comp{
+    background: #fff;
+    border-radius: 20px;
+    margin: 20px 20px;
+}
+.card-comp::before{
+    content: "";
+    position: absolute;
+    height: 120px;
+    width: 327px;
+    background: -webkit-linear-gradient(bottom, #00FFDD, #2FA4FF);
+    border-radius: 20px 20px 0 0;
+}
+.card-comp .card-comp-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    position: relative;
+    z-index: 100;
+
+}
+.name-profession{
+    margin-top: 10px;
+    color: #0E185F;
+}
+.name-profession .name{
+    font-size: 20px;
+    font-weight: 700;
+}
+.name-profession .profession{
+    font-size: 15px;
+    font-weight: 500;
+    margin-left: 5px;
+}

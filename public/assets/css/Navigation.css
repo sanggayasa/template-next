@@ -1,0 +1,48 @@
+.flex-container-head{
+    display: flex;
+    width: 100%;
+}
+
+.font-logo {
+    float: left;
+    font-size: 15px;
+    color:#0E185F;
+    padding: 10px;
+    margin-top: 30px;
+    
+}
+
+nav {
+    float: right;
+    padding: 20px;
+    margin: 15px 0px 10px 400px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+nav li {
+    display: inline;
+}
+
+nav a {
+    color: #0E185F;
+    font-size: 18px;
+    font-weight: 500;
+    text-align: right;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav a:hover{
+    font-weight: 700;
+}
+#content{
+    float: center;
+    width: 100%;
+
+}
