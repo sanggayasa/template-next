@@ -8,6 +8,7 @@ import Estimate from "@/components/Estimate"
 import About from "@/components/About"
 import Footer from "@/components/Footer"
 
+
 import { useState } from "react"
 export default function Home() {
   const [lang, setLang] = useState("idn");
@@ -17,15 +18,15 @@ export default function Home() {
   
   return (
     <div className='main max-h-screen'>
-    <Navigate lang={lang} changeLang={changeLang}></Navigate>
-    <div className=' overflow-y-scroll snap snap-y snap-mandatory text-slate-500 backdrop-blur-sm'>
-      <Banner lang={lang}></Banner>
-      <Services lang={lang}></Services>
-      <Package lang={lang}></Package>
-      <Estimate lang={lang}></Estimate>
-      <About lang={lang}></About>
-      <Footer lang={lang}></Footer>
+      <Navigate lang={lang} changeLang={changeLang}></Navigate>
+      <div className=' overflow-y-scroll snap snap-y snap-mandatory text-slate-500 backdrop-blur-sm'>
+        <Banner lang={lang}></Banner>
+        <Services lang={lang}></Services>
+        <Package lang={lang}></Package>
+        <Estimate lang={lang}></Estimate>
+        <About lang={lang}></About>
+        <Footer lang={lang}></Footer>
+      </div>
     </div>
-  </div>
   )
 }
