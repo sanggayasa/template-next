@@ -20,14 +20,15 @@ export default function InputText ({
   styleLabel,
   styleInput,
   styleTooltip,
-  pattern
+  pattern,
+  validate,
 } : Readonly<{ 
   className? : string, 
   labelName : string, 
   disabled? : boolean, 
   messageError? : string, 
-  value : any, 
-  setValue : any, 
+  value? : any, 
+  setValue? : any, 
   type? : string, 
   isLoading? : any, 
   id? : any,
@@ -40,21 +41,27 @@ export default function InputText ({
   styleLabel?:string,
   styleInput?:string,
   styleTooltip?:string,
-  pattern?:string
+  pattern?:string,
+  validate?:any
 }> ) {
-  
+  const [showPassword, setShowPassword] = useState(false);
+const [message, setMessage] = useState("");
   const handleNameInputChange = (dataName: ChangeEvent<HTMLInputElement>) => {
     if(setValue){
       setValue(dataName.target.value);
     }else{
       value = dataName.target.value
     }
+
+    console.log(validate(dataName.target.value))
+    console.log(Boolean(validate(dataName.target.value)))
+    if(validate(dataName.target.value)){
+      messageError = "error";
+    }
   };
 
-  const [showPassword, setShowPassword] = useState(false);
-
   const handleToggleVisibility = () => setShowPassword(!showPassword);
-
+  
   const password = showPassword ? 'text' : 'password';
   const toggleIcon = showPassword ? 
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
